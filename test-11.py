@@ -52,6 +52,12 @@ while True:
                         left_count.append([curr[0], curr[1]])
 
                     print(left_diff, left_count)
+                    
+                    with open("left_diff.txt", "w") as o:
+                        print(left_diff, file=o)
+
+                    with open("left_count.txt", "w") as o:
+                        print(left_count, file=o)
 
                 prev_finger_positions_left = landmarks[1:]
             else:  # 右手
@@ -64,6 +70,12 @@ while True:
                         right_count.append([curr[0], curr[1]])
 
                     print(right_diff, right_count)
+                    
+                    with open("right_diff.txt", "w") as o:
+                        print(right_diff, file=o)
+
+                    with open("right_count.txt", "w") as o:
+                        print(right_count, file=o)
 
                 prev_finger_positions_right = landmarks[1:]
     cv2.imshow("Video", img)
@@ -72,3 +84,5 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+
